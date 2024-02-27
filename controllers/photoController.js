@@ -37,4 +37,12 @@ export const getPhotoById = async (id) =>{
     }
 }
 
+export const getUserPhotos = async (username) =>{
+        const response = await 
+        axios.get(`${process.env.BASE_URL}/users/${username}/photos`,{
+            params : {client_id : process.env.UNSPLASH_ACCESS_KEY}
+        });
+    return response.data;
+}
+
 // export { getPhotos, getPhotoById}
